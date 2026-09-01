@@ -286,7 +286,7 @@ body.is-plano .mode-toggle__thumb{ transform: translateX(100%); background: var(
   opacity: 1;
 }
 .hero__image--plano{
-  background-image: url('images/plano/blueprint_banner.jpg');
+  background-image: url('images/plano/blueprint_museo.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0;
