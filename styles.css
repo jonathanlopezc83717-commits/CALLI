@@ -335,7 +335,7 @@ h1, h2, h3, p{ margin: 0; }
   line-height: 1.7;
   color: rgba(251, 250, 246, 0.86);
   max-width: 560px;
-  margin-bottom: 2.6rem;
+  margin-top: 2.4rem;
 }
 .tagline__line{ display: block; }
 .tagline__line--em{
