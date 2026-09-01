@@ -37,7 +37,7 @@
   --pad-x-sm:    6vw;
   --maxw:        1480px;
   --nav-h:       78px;
-  --nav-cta-h:  52px;
+  --nav-cta-h:   58px;
 }
 
 /* ---------- Reset ---------- */
@@ -120,14 +120,14 @@ h1, h2, h3, p{ margin: 0; }
 .nav__cta{
   display: flex;
   align-items: center;
-  gap: .8rem;
+  gap: 1rem;
   height: var(--nav-cta-h);
   padding: 0 var(--pad-x);
   border-top: 1px solid var(--line-soft);
 }
 .nav__cta .button{
-  padding: 7px 12px;
-  font-size: .6rem;
+  padding: 9px 16px;
+  font-size: .62rem;
   color: var(--graphite);
   border-color: rgba(31, 31, 29, 0.4);
 }
@@ -136,6 +136,14 @@ h1, h2, h3, p{ margin: 0; }
 .nav__cta .button--ghost{ color: var(--stone); border-color: var(--line); }
 .nav__cta .button--ghost::before{ background: var(--olive); }
 .nav__cta .button--ghost:hover{ color: var(--ivory); border-color: var(--olive); }
+
+/* Subtle breathing pulse on the CTA buttons */
+@keyframes ctaBlink{
+  0%, 100%{ opacity: 1; }
+  50%{ opacity: .78; }
+}
+.nav__cta .button{ animation: ctaBlink 3.2s var(--ease) infinite; }
+.nav__cta .button--ghost{ animation-delay: 1.6s; }
 .nav.is-scrolled{
   background: rgba(243, 240, 232, 0.92);
   border-bottom-color: var(--line);
@@ -153,7 +161,7 @@ h1, h2, h3, p{ margin: 0; }
   display: inline-flex; align-items: center; justify-content: center;
   transform: translateY(2px);
 }
-.nav__links{ display: flex; gap: 2.4rem; justify-content: center; }
+.nav__links{ display: flex; gap: clamp(1.5rem, 2.4vw, 2.4rem); justify-content: center; }
 .nav__links a{
   position: relative;
   display: inline-flex; align-items: center; gap: .5rem;
@@ -442,7 +450,7 @@ h1, h2, h3, p{ margin: 0; }
 }
 @media (prefers-reduced-motion: reduce){
   .reveal{ opacity: 1; transform: none; transition: none; }
-  .hero__scroll-line::after, .eyebrow__dot, .hero__image{ animation: none; }
+  .hero__scroll-line::after, .eyebrow__dot, .hero__image, .nav__cta .button{ animation: none; }
   .service-item__panel,
   .service-item__content,
   .service-list__arrow{ transition: none; }
@@ -1030,16 +1038,16 @@ h2 em{ font-style: italic; color: var(--olive); font-weight: 300; }
 .footer__top:hover{ border-color: var(--sand); }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 980px){
+/* Collapse primary nav to hamburger before the links crowd the brand */
+@media (max-width: 1080px){
   .nav__meta{ display: none; }
-  .nav__row{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
+  .nav__row{ display: flex; align-items: center; gap: 1rem; }
   .nav__links{ display: none; }
   .menu{ display: inline-flex; }
   .brand{ margin-right: auto; }
+}
+
+@media (max-width: 980px){
   .values{ grid-template-columns: repeat(2, 1fr); }
   .value:nth-child(2n){ border-right: 0; }
   .value:nth-child(-n+4){ border-bottom: 1px solid var(--line); }
