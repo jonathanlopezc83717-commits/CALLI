@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CALLI — Estudio de Arquitectura</title>
+  <meta name="description" content="CALLI — Estudio de Arquitectura. Espacios con propósito, diseñados desde la intención y el contexto.">
+  <meta name="theme-color" content="#252525">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CALLI — Estudio de Arquitectura">
+  <meta property="og:description" content="Espacios con propósito. Diseño arquitectónico contemporáneo desde México.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip" href="#inicio">Saltar al contenido</a>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="scroll-progress__bar" id="scrollBar"></span>
+  </div>
+
+  <header class="nav" id="nav">
+    <a href="#inicio" class="brand" aria-label="CALLI — Inicio">
+      <span class="brand__mark">C</span>
+      <span class="brand__word">CALLI</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Navegación principal">
+      <a href="#estudio" data-link><span class="nav__num">01</span>Estudio</a>
+      <a href="#proposito" data-link><span class="nav__num">02</span>Propósito</a>
+      <a href="#proceso" data-link><span class="nav__num">03</span>Proceso</a>
+      <a href="#proyectos" data-link><span class="nav__num">04</span>Proyectos</a>
+      <a href="#contacto" data-link><span class="nav__num">05</span>Contacto</a>
+    </nav>
+
+    <div class="nav__meta" aria-hidden="true">
+      <span>MX · 2026</span>
+    </div>
+
+    <button class="mode-toggle" id="modeToggle" type="button" aria-label="Cambiar modo de visualización" aria-pressed="false">
+      <span class="mode-toggle__thumb" aria-hidden="true"></span>
+      <span class="mode-toggle__options">
+        <span class="mode-toggle__option is-active" data-mode="render">Render</span>
+        <span class="mode-toggle__option" data-mode="plano">Plano</span>
+      </span>
+    </button>
+
+    <button class="menu" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="menu__lines"><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu__inner">
+      <p class="mobile-menu__label">Navegación</p>
+      <nav aria-label="Navegación móvil">
+        <a href="#estudio" data-mobile-link><span>01</span>Estudio</a>
+        <a href="#proposito" data-mobile-link><span>02</span>Propósito</a>
+        <a href="#proceso" data-mobile-link><span>03</span>Proceso</a>
+        <a href="#proyectos" data-mobile-link><span>04</span>Proyectos</a>
+        <a href="#contacto" data-mobile-link><span>05</span>Contacto</a>
+      </nav>
+      <div class="mobile-menu__foot">
+        <a href="mailto:hola@calliestudio.mx">hola@calliestudio.mx ↗</a>
+        <p>Ciudad de México · 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero__image hero__image--render" aria-hidden="true"></div>
+      <div class="hero__image hero__image--plano" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__lines" aria-hidden="true">
+        <span class="hero__line hero__line--h"></span>
+        <span class="hero__line hero__line--v"></span>
+      </div>
+
+      <div class="hero__content">
+        <p class="eyebrow reveal" data-reveal>
+          <span class="eyebrow__dot"></span>
+          Estudio de Arquitectura · México
+        </p>
+        <h1 class="hero__title">
+          <span class="reveal" data-reveal data-delay="0">C</span><span class="reveal" data-reveal data-delay="60">A</span><span class="reveal" data-reveal data-delay="120">L</span><span class="reveal" data-reveal data-delay="180">L</span><span class="reveal" data-reveal data-delay="240">I</span>
+        </h1>
+        <p class="hero__tagline reveal" data-reveal data-delay="360">
+          <span class="tagline__line">Espacios con propósito,</span>
+          <span class="tagline__line tagline__line--em">diseñados desde la intención.</span>
+        </p>
+
+        <div class="hero__cta reveal" data-reveal data-delay="480">
+          <a href="#proyectos" class="button">
+            <span>Ver proyectos</span>
+            <span class="button__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#contacto" class="button button--ghost">
+            <span>Iniciar un proyecto</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__meta">
+        <div class="hero__counter" aria-hidden="true">
+          <span id="heroCurrent">01</span>
+          <span class="hero__counter-sep">/</span>
+          <span>08</span>
+        </div>
+        <a href="#estudio" class="hero__scroll" aria-label="Bajar al estudio">
+          <span>Scroll</span>
+          <span class="hero__scroll-line"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ESTUDIO -->
+    <section id="estudio" class="section split">
+      <header class="split__head">
+        <p class="section-number reveal" data-reveal>
+          <span class="section-number__line"></span>
+          01 — El estudio
+        </p>
+        <h2 class="reveal" data-reveal>
+          Diseñamos<br>
+          <em>espacios con intención.</em>
+        </h2>
+      </header>
+      <div class="text-column">
+        <p class="lead reveal" data-reveal>
+          CALLI es un estudio de arquitectura contemporánea dedicado al diseño
+          y desarrollo de espacios funcionales, significativos y sensibles a su contexto.
+        </p>
+        <p class="reveal" data-reveal>
+          Nuestro trabajo parte de comprender las necesidades de las personas
+          para transformarlas en propuestas arquitectónicas que integren
+          funcionalidad, identidad, materialidad y experiencia.
+        </p>
+        <div class="keywords reveal" data-reveal>
+          <span>Usuario</span>
+          <span>Contexto</span>
+          <span>Experiencia</span>
+        </div>
+      </div>
+      <figure class="split__media reveal" data-reveal>
+        <div class="media-stack">
+          <img class="media-stack__render" src="images/estudio.jpg" alt="Interior del estudio CALLI con luz natural y materialidad" loading="lazy" decoding="async">
+          <img class="media-stack__plano" src="images/plano/estudio-plano.svg" alt="Plano arquitectónico del estudio CALLI" loading="lazy" decoding="async">
+        </div>
+        <figcaption>
+          <span class="split__media-tag">Estudio · 2026</span>
+          <span>CDMX</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- FILOSOFÍA -->
+    <section class="philosophy" aria-labelledby="philosophy-title">
+      <div class="philosophy__image philosophy__image--render" aria-hidden="true"></div>
+      <div class="philosophy__image philosophy__image--plano" aria-hidden="true"></div>
+      <div class="philosophy__inner">
+        <div class="philosophy__line" aria-hidden="true"></div>
+        <p class="eyebrow reveal" data-reveal>Filosofía</p>
+        <h2 id="philosophy-title" class="reveal" data-reveal>
+          El espacio no es solamente<br>
+          lo que <em>vemos.</em>
+        </h2>
+        <p class="reveal" data-reveal>
+          Es aquello que habitamos, experimentamos y hacemos propio.
+          En CALLI, cada decisión arquitectónica responde a una intención.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROPÓSITO -->
+    <section id="proposito" class="purpose">
+      <header class="section-heading">
+        <p class="section-number reveal" data-reveal>
+          <span class="section-number__line"></span>
+          02 — Propósito
+        </p>
+        <h2 class="reveal" data-reveal>
+          Misión, visión<br>
+          <em>y valores.</em>
+        </h2>
+      </header>
+
+      <article class="purpose-card mission">
+        <div class="purpose-card__head">
+          <span class="purpose-card__num">01</span>
+          <h3>Misión</h3>
+        </div>
+        <p>
+          Crear espacios con propósito, entendiendo las necesidades de las personas
+          y transformándolas en propuestas arquitectónicas funcionales, significativas
+          y sensibles a su contexto.
+        </p>
+      </article>
+
+      <article class="purpose-card vision">
+        <div class="purpose-card__head">
+          <span class="purpose-card__num">02</span>
+          <h3>Visión</h3>
+        </div>
+        <p>
+          Consolidarnos como un estudio de arquitectura contemporánea reconocido
+          por desarrollar espacios con propósito, distinguiéndonos por la calidad
+          de nuestras propuestas, la comprensión del contexto y la capacidad de
+          transformar necesidades en experiencias espaciales significativas.
+        </p>
+      </article>
+
+      <div class="values" aria-label="Valores del estudio">
+        <div class="value"><span>01</span><h3>Responsabilidad</h3><p>Asumimos el impacto de nuestras decisiones.</p></div>
+        <div class="value"><span>02</span><h3>Integridad</h3><p>Actuamos con honestidad y transparencia.</p></div>
+        <div class="value"><span>03</span><h3>Respeto</h3><p>Valoramos a las personas y su forma de habitar.</p></div>
+        <div class="value"><span>04</span><h3>Creatividad</h3><p>Convertimos necesidades en oportunidades.</p></div>
+        <div class="value"><span>05</span><h3>Excelencia</h3><p>Buscamos calidad y precisión en cada proyecto.</p></div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="section process">
+      <header class="process__head">
+        <p class="section-number reveal" data-reveal>
+          <span class="section-number__line"></span>
+          03 — Proceso
+        </p>
+        <div class="process-intro">
+          <h2 class="reveal" data-reveal>
+            Del propósito<br>
+            <em>al espacio.</em>
+          </h2>
+          <p class="reveal" data-reveal>
+            Cada proyecto comienza con una pregunta y se desarrolla a través
+            de un proceso consciente, iterativo y colaborativo.
+          </p>
+        </div>
+      </header>
+
+      <ol class="process-grid" aria-label="Etapas del proceso">
+        <li><span class="process-grid__num">01</span><h3>Escuchar</h3><p>Comprendemos al usuario y sus necesidades reales.</p></li>
+        <li><span class="process-grid__num">02</span><h3>Analizar</h3><p>Estudiamos el contexto, el sitio y sus condiciones.</p></li>
+        <li><span class="process-grid__num">03</span><h3>Conceptualizar</h3><p>Transformamos necesidades en ideas arquitectónicas.</p></li>
+        <li><span class="process-grid__num">04</span><h3>Diseñar</h3><p>Construimos la propuesta espacial y técnica.</p></li>
+        <li><span class="process-grid__num">05</span><h3>Materializar</h3><p>Convertimos la idea en un espacio habitable.</p></li>
+      </ol>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services section">
+      <header class="services__head">
+        <p class="section-number reveal" data-reveal>
+          <span class="section-number__line"></span>
+          04 — Servicios
+        </p>
+        <h2 class="reveal" data-reveal>
+          Lo que <em>hacemos.</em>
+        </h2>
+      </header>
+
+      <ul class="service-list" aria-label="Servicios del estudio">
+        <li class="service-item">
+          <button class="service-item__trigger" type="button" aria-expanded="false" aria-controls="svc-01">
+            <span class="service-list__num">01</span>
+            <h3 class="service-item__title">Diseño arquitectónico</h3>
+            <p class="service-item__lead">Conceptualización y desarrollo integral de proyectos.</p>
+            <span class="service-list__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="service-item__panel" id="svc-01" role="region" aria-labelledby="svc-01-title" aria-hidden="true">
+            <div class="service-item__panel-inner">
+              <div class="service-item__content">
+                <p class="service-item__copy">
+                  Trabajamos el proyecto desde la primera conversación hasta la documentación
+                  técnica que llega a obra. Cada decisión responde a una intención y al contexto
+                  específico del sitio, sus usuarios y su entorno.
+                </p>
+                <div class="service-item__details">
+                  <div>
+                    <h4>Incluye</h4>
+                    <ul>
+                      <li>Análisis de sitio y contexto</li>
+                      <li>Programa arquitectónico</li>
+                      <li>Partido y conceptualización</li>
+                      <li>Anteproyecto y proyecto ejecutivo</li>
+                      <li>Coordinación con consultores</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Entregables</h4>
+                    <ul>
+                      <li>Planos arquitectónicos completos</li>
+                      <li>Modelo 3D y volumetría</li>
+                      <li>Renders y visualización del proyecto</li>
+                      <li>Memoria descriptiva</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="service-item">
+          <button class="service-item__trigger" type="button" aria-expanded="false" aria-controls="svc-02">
+            <span class="service-list__num">02</span>
+            <h3 class="service-item__title">Diseño de interiores</h3>
+            <p class="service-item__lead">Espacios interiores coherentes con la arquitectura.</p>
+            <span class="service-list__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="service-item__panel" id="svc-02" role="region" aria-labelledby="svc-02-title" aria-hidden="true">
+            <div class="service-item__panel-inner">
+              <div class="service-item__content">
+                <p class="service-item__copy">
+                  Diseñamos cada ambiente interior como continuación natural de la arquitectura.
+                  Materialidad, luz, proporción y detalles al servicio de quien lo habita —
+                  coherente con la identidad del proyecto.
+                </p>
+                <div class="service-item__details">
+                  <div>
+                    <h4>Incluye</h4>
+                    <ul>
+                      <li>Distribución y circulación interior</li>
+                      <li>Especificación de materiales y acabados</li>
+                      <li>Diseño de iluminación</li>
+                      <li>Mobiliario fijo y empotrado</li>
+                      <li>Coordinación con proveedores</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Entregables</h4>
+                    <ul>
+                      <li>Planos de interiorismo</li>
+                      <li>Moodboards y paletas cromáticas</li>
+                      <li>Cuadro de materiales y acabados</li>
+                      <li>Especificaciones técnicas</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="service-item">
+          <button class="service-item__trigger" type="button" aria-expanded="false" aria-controls="svc-03">
+            <span class="service-list__num">03</span>
+            <h3 class="service-item__title">Visualización arquitectónica</h3>
+            <p class="service-item__lead">Representación gráfica y visual de cada proyecto.</p>
+            <span class="service-list__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="service-item__panel" id="svc-03" role="region" aria-labelledby="svc-03-title" aria-hidden="true">
+            <div class="service-item__panel-inner">
+              <div class="service-item__content">
+                <p class="service-item__copy">
+                  Materializamos la propuesta antes de construir. Imágenes y recorridos que
+                  comunican con precisión la intención del proyecto y acompañan la toma de
+                  decisiones de clientes, equipos y autoridades.
+                </p>
+                <div class="service-item__details">
+                  <div>
+                    <h4>Incluye</h4>
+                    <ul>
+                      <li>Renders fotorrealistas</li>
+                      <li>Recorridos virtuales 3D</li>
+                      <li>Animaciones arquitectónicas</li>
+                      <li>Maquetas digitales</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Entregables</h4>
+                    <ul>
+                      <li>Set de imágenes en alta definición</li>
+                      <li>Video walkthrough</li>
+                      <li>Imágenes para presentación</li>
+                      <li>Contenido para redes y portafolio</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="service-item">
+          <button class="service-item__trigger" type="button" aria-expanded="false" aria-controls="svc-04">
+            <span class="service-list__num">04</span>
+            <h3 class="service-item__title">Desarrollo de proyectos</h3>
+            <p class="service-item__lead">Documentación técnica y definición constructiva.</p>
+            <span class="service-list__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="service-item__panel" id="svc-04" role="region" aria-labelledby="svc-04-title" aria-hidden="true">
+            <div class="service-item__panel-inner">
+              <div class="service-item__content">
+                <p class="service-item__copy">
+                  Traducimos la propuesta arquitectónica en planos y documentos que el equipo
+                  de obra puede ejecutar sin dudas. Precisión técnica sin perder de vista la
+                  intención original del proyecto.
+                </p>
+                <div class="service-item__details">
+                  <div>
+                    <h4>Incluye</h4>
+                    <ul>
+                      <li>Planos constructivos</li>
+                      <li>Detalles arquitectónicos</li>
+                      <li>Especificaciones técnicas</li>
+                      <li>Coordinación estructural</li>
+                      <li>Cuantificación preliminar</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Entregables</h4>
+                    <ul>
+                      <li>Proyecto ejecutivo completo</li>
+                      <li>Detalles constructivos 1:5 / 1:2 / 1:1</li>
+                      <li>Manual de materiales</li>
+                      <li>Bitácora técnica de proyecto</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="service-item">
+          <button class="service-item__trigger" type="button" aria-expanded="false" aria-controls="svc-05">
+            <span class="service-list__num">05</span>
+            <h3 class="service-item__title">Consultoría</h3>
+            <p class="service-item__lead">Acompañamiento estratégico en decisiones de diseño.</p>
+            <span class="service-list__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M3 8 L13 8 M9 4 L13 8 L9 12" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="service-item__panel" id="svc-05" role="region" aria-labelledby="svc-05-title" aria-hidden="true">
+            <div class="service-item__panel-inner">
+              <div class="service-item__content">
+                <p class="service-item__copy">
+                  Acompañamos a desarrolladores, equipos de diseño y particulares en decisiones
+                  clave. Análisis, evaluación y recomendaciones fundamentadas en contexto,
+                  normativa y experiencia.
+                </p>
+                <div class="service-item__details">
+                  <div>
+                    <h4>Incluye</h4>
+                    <ul>
+                      <li>Análisis de factibilidad</li>
+                      <li>Evaluación de sitio</li>
+                      <li>Selección de materiales</li>
+                      <li>Optimización de recursos</li>
+                      <li>Dictamen técnico</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Entregables</h4>
+                    <ul>
+                      <li>Informe de factibilidad</li>
+                      <li>Recomendaciones escritas</li>
+                      <li>Sesiones de trabajo</li>
+                      <li>Reporte fotográfico</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section projects">
+      <header class="projects__head">
+        <p class="section-number reveal" data-reveal>
+          <span class="section-number__line"></span>
+          05 — Proyectos
+        </p>
+        <h2 class="reveal" data-reveal>
+          Una selección<br>
+          <em>de nuestro trabajo.</em>
+        </h2>
+      </header>
+
+      <div class="project-grid">
+        <article class="project project--large">
+          <a class="project__link" href="#proyectos" aria-label="Ver proyecto Casa Aztahuacán">
+            <div class="project__media">
+              <img class="media-stack__render" src="images/project-01.jpg" alt="Casa Aztahuacán — fachada residencial" loading="lazy" decoding="async">
+              <img class="media-stack__plano" src="images/plano/project-01-plano.svg" alt="Plano arquitectónico Casa Aztahuacán" loading="lazy" decoding="async">
+              <div class="project__overlay">
+                <span class="project__overlay-eyebrow">Proyecto · 2026</span>
+                <span class="project__overlay-cta">Ver proyecto →</span>
+              </div>
+            </div>
+            <div class="project__caption">
+              <span class="project__tag">01 / Residencial</span>
+              <h3>Casa Aztahuacán</h3>
+              <p>Ciudad de México · 2026</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="project">
+          <a class="project__link" href="#proyectos" aria-label="Ver proyecto 02">
+            <div class="project__media">
+              <img class="media-stack__render" src="images/project-02.jpg" alt="Proyecto cultural — espacio interior" loading="lazy" decoding="async">
+              <img class="media-stack__plano" src="images/plano/project-02-plano.svg" alt="Plano de elevación proyecto cultural" loading="lazy" decoding="async">
+              <div class="project__overlay">
+                <span class="project__overlay-eyebrow">Proyecto · 2026</span>
+                <span class="project__overlay-cta">Ver proyecto →</span>
+              </div>
+            </div>
+            <div class="project__caption">
+              <span class="project__tag">02 / Cultural</span>
+              <h3>Proyecto 02</h3>
+              <p>México · 2026</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="project">
+          <a class="project__link" href="#proyectos" aria-label="Ver proyecto 03">
+            <div class="project__media">
+              <img class="media-stack__render" src="images/project-03.jpg" alt="Proyecto urbano — edificio" loading="lazy" decoding="async">
+              <img class="media-stack__plano" src="images/plano/project-03-plano.svg" alt="Plano urbano de desarrollo mixto" loading="lazy" decoding="async">
+              <div class="project__overlay">
+                <span class="project__overlay-eyebrow">Proyecto · 2026</span>
+                <span class="project__overlay-cta">Ver proyecto →</span>
+              </div>
+            </div>
+            <div class="project__caption">
+              <span class="project__tag">03 / Urbano</span>
+              <h3>Proyecto 03</h3>
+              <p>Estado de México · 2026</p>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <p class="note reveal" data-reveal>
+        * Las imágenes de esta primera versión son espacios reservados para fotografías reales de proyectos.
+      </p>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact" aria-labelledby="contact-title">
+      <div class="contact__image contact__image--render" aria-hidden="true"></div>
+      <div class="contact__image contact__image--plano" aria-hidden="true"></div>
+      <div class="contact__inner">
+        <div class="contact__head">
+          <p class="eyebrow reveal" data-reveal>06 — Contacto</p>
+          <h2 id="contact-title" class="reveal" data-reveal>
+            ¿Tienes un espacio<br>
+            <em>en mente?</em>
+          </h2>
+          <p class="contact__copy reveal" data-reveal>
+            Hablemos sobre cómo convertir una idea en un espacio con propósito.
+          </p>
+        </div>
+
+        <div class="contact__cta reveal" data-reveal>
+          <a class="contact-link" href="mailto:hola@calliestudio.mx" id="emailLink">
+            <span class="contact-link__text">hola@calliestudio.mx</span>
+            <span class="contact-link__arrow" aria-hidden="true">→</span>
+          </a>
+          <button class="contact-copy" id="copyEmail" type="button" aria-label="Copiar email">
+            <span class="contact-copy__text">Copiar email</span>
+            <span class="contact-copy__feedback" aria-live="polite">¡Copiado!</span>
+          </button>
+        </div>
+
+        <dl class="contact__details">
+          <div><dt>Teléfono</dt><dd><a href="tel:+525500000000">+52 55 0000 0000</a></dd></div>
+          <div><dt>Estudio</dt><dd>Ciudad de México, México</dd></div>
+          <div><dt>Redes</dt><dd><a href="#" rel="noopener">Instagram · @calliestudio</a></dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="footer__mark">CALLI</span>
+      <span class="footer__tag">Estudio de Arquitectura</span>
+    </div>
+    <div class="footer__col">
+      <span class="footer__label">Espacios con propósito.</span>
+      <span>© 2026 · Todos los derechos reservados</span>
+    </div>
+    <div class="footer__col footer__col--end">
+      <a href="#inicio" class="footer__top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <!-- Plano title block (visible in plano mode) -->
+  <aside class="title-block" aria-hidden="true">
+    <div class="title-block__row title-block__row--head">
+      <span class="title-block__brand">CALLI · ESTUDIO</span>
+      <span class="title-block__sheet">A-01</span>
+    </div>
+    <div class="title-block__row">
+      <span class="title-block__label">PROYECTO</span>
+      <span class="title-block__value">LANDING · WEB</span>
+    </div>
+    <div class="title-block__row">
+      <span class="title-block__label">DRAWING Nº</span>
+      <span class="title-block__value">2026.001</span>
+    </div>
+    <div class="title-block__row">
+      <span class="title-block__label">ESCALA</span>
+      <span class="title-block__value">1 : 1</span>
+    </div>
+    <div class="title-block__row">
+      <span class="title-block__label">FECHA</span>
+      <span class="title-block__value">IX · MMXXVI</span>
+    </div>
+    <div class="title-block__row title-block__row--stamp">
+      <span>DRAFT · FOR REVIEW</span>
+    </div>
+  </aside>
+
+  <!-- Plano mode watermark (visible in plano mode) -->
+  <div class="plano-watermark" aria-hidden="true">
+    <span>MODO</span>
+    <span>PLANO</span>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

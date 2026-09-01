@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Plano arquitectónico del estudio CALLI">
+  <defs>
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="20" height="20">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#a8d8ff" stroke-width="0.2" opacity="0.25"/>
+    </pattern>
+    <pattern id="desk" patternUnits="userSpaceOnUse" width="6" height="6">
+      <line x1="0" y1="0" x2="6" y2="0" stroke="#a8d8ff" stroke-width="0.3" opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1250" fill="#0a2540"/>
+  <rect width="1000" height="1250" fill="url(#grid)"/>
+
+  <!-- Outer walls (thick) -->
+  <g stroke="#e0f2fe" stroke-width="3.5" fill="none" stroke-linecap="square">
+    <rect x="120" y="280" width="760" height="780"/>
+  </g>
+
+  <!-- Inner walls (medium) -->
+  <g stroke="#e0f2fe" stroke-width="1.6" fill="none">
+    <!-- Bathroom partition -->
+    <line x1="700" y1="280" x2="700" y2="500"/>
+    <line x1="700" y1="500" x2="880" y2="500"/>
+    <!-- Kitchenette partition -->
+    <line x1="500" y1="780" x2="500" y2="1060"/>
+    <line x1="120" y1="780" x2="280" y2="780"/>
+  </g>
+
+  <!-- Wall fills -->
+  <g fill="#e0f2fe" opacity="0.95">
+    <rect x="120" y="280" width="760" height="6"/>
+    <rect x="120" y="280" width="6" height="780"/>
+    <rect x="874" y="280" width="6" height="780"/>
+    <rect x="120" y="1054" width="760" height="6"/>
+  </g>
+
+  <!-- Door openings -->
+  <g fill="#0a2540">
+    <rect x="380" y="280" width="50" height="6"/>
+    <rect x="700" y="420" width="6" height="40"/>
+    <rect x="280" y="777" width="50" height="6"/>
+  </g>
+
+  <!-- Door swings -->
+  <g stroke="#a8d8ff" stroke-width="0.6" fill="none" opacity="0.8">
+    <path d="M 380 280 A 40 40 0 0 1 420 320"/>
+    <path d="M 700 420 A 35 35 0 0 0 735 455"/>
+    <path d="M 280 780 A 40 40 0 0 1 320 820"/>
+  </g>
+
+  <!-- Windows -->
+  <g stroke="#a8d8ff" stroke-width="1" fill="none" opacity="0.9">
+    <!-- Window front (top) -->
+    <line x1="450" y1="280" x2="660" y2="280"/>
+    <line x1="450" y1="286" x2="660" y2="286"/>
+    <line x1="450" y1="280" x2="450" y2="286"/>
+    <line x1="500" y1="280" x2="500" y2="286"/>
+    <line x1="555" y1="280" x2="555" y2="286"/>
+    <line x1="610" y1="280" x2="610" y2="286"/>
+    <line x1="660" y1="280" x2="660" y2="286"/>
+
+    <!-- Window right -->
+    <line x1="880" y1="560" x2="880" y2="700"/>
+    <line x1="874" y1="560" x2="874" y2="700"/>
+    <line x1="880" y1="560" x2="874" y2="560"/>
+    <line x1="880" y1="600" x2="874" y2="600"/>
+    <line x1="880" y1="640" x2="874" y2="640"/>
+    <line x1="880" y1="700" x2="874" y2="700"/>
+
+    <!-- Window left -->
+    <line x1="120" y1="340" x2="120" y2="500"/>
+    <line x1="126" y1="340" x2="126" y2="500"/>
+    <line x1="120" y1="340" x2="126" y2="340"/>
+    <line x1="120" y1="385" x2="126" y2="385"/>
+    <line x1="120" y1="430" x2="126" y2="430"/>
+    <line x1="120" y1="500" x2="126" y2="500"/>
+  </g>
+
+  <!-- Furniture: Workstations (2 desks) -->
+  <g stroke="#e0f2fe" stroke-width="0.9" fill="url(#desk)" opacity="0.85">
+    <rect x="180" y="360" width="140" height="70"/>
+    <rect x="350" y="360" width="140" height="70"/>
+  </g>
+  <!-- Desk legs/chairs -->
+  <g stroke="#a8d8ff" stroke-width="0.7" fill="none" opacity="0.7">
+    <rect x="225" y="445" width="50" height="40"/>
+    <rect x="395" y="445" width="50" height="40"/>
+  </g>
+
+  <!-- Material library (right wall) -->
+  <g stroke="#e0f2fe" stroke-width="0.9" fill="none" opacity="0.85">
+    <rect x="160" y="840" width="320" height="120"/>
+    <line x1="160" y1="875" x2="480" y2="875"/>
+    <line x1="160" y1="910" x2="480" y2="910"/>
+    <line x1="160" y1="945" x2="480" y2="945"/>
+    <line x1="240" y1="840" x2="240" y2="960"/>
+    <line x1="320" y1="840" x2="320" y2="960"/>
+    <line x1="400" y1="840" x2="400" y2="960"/>
+  </g>
+  <g fill="#a8d8ff" opacity="0.4">
+    <rect x="166" y="846" width="68" height="25"/>
+    <rect x="246" y="881" width="68" height="25"/>
+    <rect x="326" y="916" width="68" height="25"/>
+    <rect x="406" y="846" width="68" height="25"/>
+  </g>
+
+  <!-- Meeting table (center) -->
+  <g stroke="#e0f2fe" stroke-width="1.2" fill="none">
+    <rect x="520" y="640" width="180" height="80" rx="40" ry="40"/>
+  </g>
+  <g stroke="#a8d8ff" stroke-width="0.7" fill="none" opacity="0.7">
+    <rect x="550" y="625" width="22" height="10"/>
+    <rect x="600" y="625" width="22" height="10"/>
+    <rect x="648" y="625" width="22" height="10"/>
+    <rect x="550" y="725" width="22" height="10"/>
+    <rect x="600" y="725" width="22" height="10"/>
+    <rect x="648" y="725" width="22" height="10"/>
+  </g>
+
+  <!-- Kitchenette -->
+  <g stroke="#e0f2fe" stroke-width="0.9" fill="none" opacity="0.85">
+    <rect x="160" y="800" width="120" height="60"/>
+    <line x1="220" y1="800" x2="220" y2="860"/>
+    <line x1="160" y1="830" x2="280" y2="830" stroke-width="0.4" opacity="0.5"/>
+    <rect x="180" y="840" width="30" height="20"/>
+    <circle cx="245" cy="815" r="6"/>
+    <circle cx="260" cy="830" r="6"/>
+  </g>
+
+  <!-- Bathroom fixtures -->
+  <g stroke="#e0f2fe" stroke-width="0.9" fill="none" opacity="0.85">
+    <!-- WC -->
+    <rect x="740" y="300" width="30" height="45"/>
+    <ellipse cx="755" cy="300" rx="15" ry="6"/>
+    <!-- Sink -->
+    <rect x="800" y="300" width="40" height="25"/>
+    <circle cx="820" cy="312" r="4"/>
+    <!-- Shower -->
+    <rect x="740" y="360" width="140" height="50"/>
+    <line x1="740" y1="385" x2="880" y2="385"/>
+    <circle cx="810" cy="375" r="2" fill="#a8d8ff"/>
+  </g>
+
+  <!-- Plants/Decor -->
+  <g stroke="#a8d8ff" stroke-width="0.6" fill="none" opacity="0.7">
+    <circle cx="720" cy="380" r="14"/>
+    <circle cx="720" cy="380" r="8"/>
+    <line x1="720" y1="366" x2="720" y2="360" stroke-width="0.5"/>
+    <line x1="720" y1="394" x2="720" y2="400" stroke-width="0.5"/>
+  </g>
+
+  <!-- North arrow -->
+  <g transform="translate(900, 200)" stroke="#e0f2fe" fill="none" stroke-width="1.2">
+    <circle r="32"/>
+    <line x1="0" y1="-32" x2="0" y2="32" stroke-width="0.4" opacity="0.4"/>
+    <line x1="-32" y1="0" x2="32" y2="0" stroke-width="0.4" opacity="0.4"/>
+    <polygon points="0,-30 -5,2 0,-6 5,2" fill="#e0f2fe" stroke="none"/>
+    <polygon points="0,30 -5,-2 0,6 5,-2" fill="#a8d8ff" stroke="none" opacity="0.5"/>
+    <text y="-38" text-anchor="middle" fill="#e0f2fe" font-family="ui-monospace, monospace" font-size="11" stroke="none">N</text>
+  </g>
+
+  <!-- Dimension lines -->
+  <g stroke="#a8d8ff" stroke-width="0.6" fill="none" opacity="0.85">
+    <line x1="120" y1="220" x2="120" y2="275"/>
+    <line x1="880" y1="220" x2="880" y2="275"/>
+    <line x1="120" y1="240" x2="880" y2="240"/>
+    <polygon points="120,240 130,237 130,243" fill="#a8d8ff" stroke="none"/>
+    <polygon points="880,240 870,237 870,243" fill="#a8d8ff" stroke="none"/>
+
+    <line x1="80" y1="280" x2="115" y2="280"/>
+    <line x1="80" y1="1060" x2="115" y2="1060"/>
+    <line x1="95" y1="280" x2="95" y2="1060" stroke-dasharray="3,3" opacity="0.5"/>
+
+    <line x1="885" y1="280" x2="920" y2="280"/>
+    <line x1="885" y1="500" x2="920" y2="500"/>
+    <line x1="900" y1="280" x2="900" y2="500" stroke-dasharray="3,3" opacity="0.5"/>
+  </g>
+
+  <!-- Dimension text -->
+  <g fill="#a8d8ff" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" letter-spacing="0.05em">
+    <text x="500" y="234" text-anchor="middle">14.20 m</text>
+    <text x="65" y="670" text-anchor="middle" transform="rotate(-90 65 670)">8.00 m</text>
+    <text x="950" y="395" text-anchor="middle" transform="rotate(-90 950 395)">2.50 m</text>
+  </g>
+
+  <!-- Axis labels -->
+  <g fill="#7dd3fc" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" font-weight="500" opacity="0.85">
+    <text x="115" y="205">A</text>
+    <text x="315" y="205">B</text>
+    <text x="515" y="205">C</text>
+    <text x="715" y="205">D</text>
+    <text x="875" y="205">E</text>
+    <text x="75" y="285">1</text>
+    <text x="75" y="670">2</text>
+    <text x="75" y="1055">3</text>
+  </g>
+
+  <!-- Room labels -->
+  <g fill="#e0f2fe" font-family="ui-monospace, 'SF Mono', Menlo, monospace" letter-spacing="0.1em">
+    <text x="250" y="340" text-anchor="middle" font-size="11" opacity="0.85">ESTUDIO PRINCIPAL</text>
+    <text x="610" y="680" text-anchor="middle" font-size="11" opacity="0.85">SALA DE REUNIONES</text>
+    <text x="320" y="900" text-anchor="middle" font-size="10" opacity="0.75">BIBLIOTECA / MATERIALES</text>
+    <text x="810" y="350" text-anchor="middle" font-size="10" opacity="0.75">BAÑO</text>
+    <text x="220" y="845" text-anchor="middle" font-size="9" opacity="0.75">COCINA</text>
+  </g>
+
+  <!-- Title block (bottom) -->
+  <g transform="translate(120, 1110)">
+    <rect width="350" height="80" fill="none" stroke="#a8d8ff" stroke-width="0.7"/>
+    <line x1="0" y1="26" x2="350" y2="26" stroke="#a8d8ff" stroke-width="0.4"/>
+    <line x1="230" y1="0" x2="230" y2="80" stroke="#a8d8ff" stroke-width="0.4"/>
+    <g fill="#e0f2fe" font-family="ui-monospace, 'SF Mono', Menlo, monospace">
+      <text x="10" y="18" font-size="9" opacity="0.7" letter-spacing="0.15em">LAM. E-01 · PLANTA ARQUITECTÓNICA</text>
+      <text x="10" y="48" font-size="13" letter-spacing="0.1em" font-weight="500">ESTUDIO CALLI</text>
+      <text x="10" y="66" font-size="9" opacity="0.65" letter-spacing="0.1em">CDMX · 2026</text>
+      <text x="240" y="48" font-size="9" opacity="0.7" letter-spacing="0.1em">ESCALA</text>
+      <text x="240" y="66" font-size="13" font-weight="500">1 : 50</text>
+    </g>
+  </g>
+
+  <!-- Scale bar -->
+  <g transform="translate(620, 1210)" stroke="#a8d8ff" fill="none">
+    <line x1="0" y1="0" x2="120" y2="0" stroke-width="0.8"/>
+    <line x1="0" y1="-3" x2="0" y2="3" stroke-width="0.8"/>
+    <line x1="30" y1="-2" x2="30" y2="2" stroke-width="0.5"/>
+    <line x1="60" y1="-2" x2="60" y2="2" stroke-width="0.5"/>
+    <line x1="90" y1="-2" x2="90" y2="2" stroke-width="0.5"/>
+    <line x1="120" y1="-3" x2="120" y2="3" stroke-width="0.8"/>
+    <text x="60" y="15" text-anchor="middle" fill="#a8d8ff" font-family="ui-monospace, monospace" font-size="8" stroke="none">0—3 m</text>
+  </g>
+</svg>
