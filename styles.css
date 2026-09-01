@@ -1016,6 +1016,23 @@ h2 em{ font-style: italic; color: var(--olive); font-weight: 300; }
 }
 .contact__details a:hover{ border-color: var(--sand); }
 
+/* ---------- Single-view landing (Proyectos / Contacto) ----------
+   Compacts both CTA target sections so each lands within one viewport
+   below the fixed header. */
+.projects{ padding: clamp(1.5rem, 4vh, 3.5rem) var(--pad-x); }
+.projects__head{ margin-bottom: clamp(1rem, 2.5vh, 2rem); }
+.projects .section-number{ margin-bottom: 1.2rem; }
+.projects h2{ font-size: clamp(2.2rem, 4.5vw, 4rem); }
+.project--large .project__media{ min-height: 44vh; }
+.project .project__media{ min-height: 19vh; }
+.project__caption{ padding: .8rem 0 0; }
+.note{ margin-top: 1rem; }
+
+.contact{ padding: clamp(2rem, 5vh, 4rem) var(--pad-x); }
+.contact h2{ font-size: clamp(2.2rem, 5vw, 4.5rem); margin: 1rem 0; }
+.contact__cta{ margin: clamp(1.5rem, 3vh, 2.5rem) 0; }
+.contact__details{ padding-top: 1.5rem; }
+
 /* ---------- Footer ---------- */
 .footer{
   display: grid;
