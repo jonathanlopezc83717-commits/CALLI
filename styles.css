@@ -537,7 +537,7 @@ h2 em{ font-style: italic; color: var(--olive); font-weight: 300; }
 }
 .split__media-tag{ color: var(--graphite); }
 .lead{ font-size: clamp(1.15rem, 1.5vw, 1.4rem); line-height: 1.5; }
-.text-column p:not(.lead){ line-height: 1.85; color: #4a4942; margin-top: 1.2rem; }
+.text-column p:not(.lead){ line-height: 1.85; color: var(--graphite); margin-top: 1.2rem; }
 .keywords{ display: flex; gap: 1.6rem; flex-wrap: wrap; margin-top: 2.6rem; }
 .keywords span{
   font-family: var(--f-mono);
@@ -676,7 +676,7 @@ body.is-plano .philosophy__image--plano{ opacity: .55; }
   gap: clamp(2rem, 8vw, 8rem);
   align-items: end;
 }
-.process-intro p{ max-width: 460px; line-height: 1.85; color: #4a4942; font-size: 1.02rem; }
+.process-intro p{ max-width: 460px; line-height: 1.85; color: var(--graphite); font-size: 1.02rem; }
 .process-grid{
   display: grid; grid-template-columns: repeat(5, 1fr);
   border-top: 1px solid var(--line);
@@ -1294,9 +1294,12 @@ body.is-plano .process-grid li:hover{ background: rgba(125, 211, 252, 0.06); }
 /* Contact section adjustments */
 body.is-plano .contact__link{ color: var(--sand); }
 body.is-plano .contact-link:hover{ color: var(--white); }
-body.is-plano .contact-copy{ border-color: var(--line-ivory); color: var(--ivory); }
-body.is-plano .contact-copy:hover{ border-color: var(--sand); color: var(--sand); }
+body.is-plano .contact-copy{ border-color: var(--sand); color: var(--graphite); }
+body.is-plano .contact-copy:hover{ border-color: var(--white); color: var(--white); }
 body.is-plano .contact-details a:hover{ border-color: var(--sand); }
+body.is-plano .contact__details dd,
+body.is-plano .contact__details a{ color: var(--graphite); }
+body.is-plano .contact__details a:hover{ color: var(--sand); }
 
 /* Nav links active state in blueprint mode */
 body.is-plano .nav__num{ color: rgba(168, 216, 255, 0.5); }

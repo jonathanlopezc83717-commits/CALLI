@@ -194,21 +194,17 @@ r = contrast_ratio(phil_em, phil_bg)
 add("CRITICAL", "philosophy h2 em", ".philosophy h2 em (color: var(--olive))", "var(--olive) #38bdf8", "var(--olive) #38bdf8 (plano)", r, "text matches background — INVISIBLE")
 
 # === 11. contact-copy button text ===
-# In plano, body.is-plano .contact-copy{ color: var(--ivory); }
-# var(--ivory) in plano = #0a2540. Background of the contact section: contact has an image, no solid bg.
-# The button itself has background: transparent.
-# Effective background = whatever is under it, normally body #0a2540 (image is below at z 0).
-# This is INVISIBLE on body bg.
-ccopy_text = parse_color(TOKENS["ivory"])
+# In plano, body.is-plano .contact-copy{ color: var(--graphite); } (FIXED)
+# Was: var(--ivory) = #0a2540 — invisible. Now: graphite #e8f4ff on body.
+ccopy_text = parse_color(TOKENS["graphite"])
 r = contrast_ratio(ccopy_text, parse_color("#0a2540"))
-add("CRITICAL", "contact-copy button", "body.is-plano .contact-copy { color: var(--ivory) }", "var(--ivory) #0a2540", "contact section (no own bg; body shows through)", r, "Button text invisible on dark blueprint background")
+add("INFO", "contact-copy button", "body.is-plano .contact-copy { color: var(--graphite) }", "var(--graphite) #e8f4ff", "contact section (no own bg; body shows through)", r, "FIXED — was var(--ivory)")
 
-# === 12. contact-copy border ===
-# border: 1px solid var(--line-ivory) = rgba(168,216,255,0.20) — very faint outline
-# Hard to quantify (border vs background) but 0.20 alpha on #0a2540 is ~ rgb(33,70,90)
-border_eff = composite(parse_color("rgba(168, 216, 255, 0.20)"), parse_color("#0a2540"))
-r = contrast_ratio(border_eff + (1.0,), parse_color("#0a2540"))
-add("MEDIUM", "contact-copy border", "body.is-plano .contact-copy { border-color: var(--line-ivory) }", "rgba(168,216,255,0.20)", "body #0a2540", r, f"effective border ~{fmt(border_eff)} — barely visible")
+# === 12. contact-copy border (FIXED to var(--sand)) ===
+# Was: var(--line-ivory) at 0.20 alpha. Now: var(--sand) #7dd3fc.
+border_eff = parse_color(TOKENS["sand"])
+r = contrast_ratio(border_eff, parse_color("#0a2540"))
+add("INFO", "contact-copy border", "body.is-plano .contact-copy { border-color: var(--sand) }", "var(--sand) #7dd3fc", "body #0a2540", r, "FIXED — was var(--line-ivory) at 0.20")
 
 # === 13. contact-link text (sand) on contact section bg (image + body) ===
 # Worst case: assume body bg visible behind translucent image
@@ -220,15 +216,14 @@ dt_color = blend_opacity(parse_color("#f3f0e8"), 0.55)
 r = contrast_ratio(dt_color, parse_color("#0a2540"))
 add("MEDIUM", "contact dt",   ".contact__details dt",           "rgba(243,240,232,0.55)", "body #0a2540", r, f"effective {fmt(dt_color)}")
 
-# === 15. contact__details dd (var(--ivory) = #0a2540) on body ===
-# In .contact__details dd: color: var(--ivory). In plano = #0a2540 = body bg = INVISIBLE.
-r = contrast_ratio(parse_color(TOKENS["ivory"]), parse_color("#0a2540"))
-add("CRITICAL", "contact dd",  ".contact__details dd",           "var(--ivory) #0a2540", "body #0a2540", r, "Phone / Studio / Redes labels are dark on dark — INVISIBLE")
+# === 15. contact__details dd (FIXED to var(--graphite)) ===
+# Was: var(--ivory) = #0a2540 — invisible. Now: graphite.
+r = contrast_ratio(parse_color(TOKENS["graphite"]), parse_color("#0a2540"))
+add("INFO", "contact dd",  "body.is-plano .contact__details dd", "var(--graphite) #e8f4ff (override)", "body #0a2540", r, "FIXED — was var(--ivory)")
 
-# === 16. contact__details a (inherits dd color) ===
-# Inherits --ivory in plano. Same as above.
-r = contrast_ratio(parse_color(TOKENS["ivory"]), parse_color("#0a2540"))
-add("CRITICAL", "contact dd a", ".contact__details a (links)",  "var(--ivory) #0a2540 (inherited)", "body #0a2540", r, "Same as dd — INVISIBLE")
+# === 16. contact__details a (FIXED to var(--graphite)) ===
+r = contrast_ratio(parse_color(TOKENS["graphite"]), parse_color("#0a2540"))
+add("INFO", "contact dd a", "body.is-plano .contact__details a",  "var(--graphite) #e8f4ff (override)", "body #0a2540", r, "FIXED — was inherited var(--ivory)")
 
 # === 17. title-block label rgba(168,216,255,0.6) on title-block bg ===
 tb_bg = composite(parse_color("rgba(10, 37, 64, 0.92)"), parse_color("#0a2540"))
