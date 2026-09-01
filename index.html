@@ -45,14 +45,6 @@
       <span>MX · 2026</span>
     </div>
 
-    <button class="mode-toggle" id="modeToggle" type="button" aria-label="Cambiar modo de visualización" aria-pressed="false">
-      <span class="mode-toggle__thumb" aria-hidden="true"></span>
-      <span class="mode-toggle__options">
-        <span class="mode-toggle__option is-active" data-mode="render">Render</span>
-        <span class="mode-toggle__option" data-mode="plano">Plano</span>
-      </span>
-    </button>
-
     <button class="menu" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
       <span class="menu__lines"><i></i><i></i></span>
     </button>
@@ -79,7 +71,6 @@
     <!-- HERO -->
     <section id="inicio" class="hero">
       <div class="hero__image hero__image--render" aria-hidden="true"></div>
-      <div class="hero__image hero__image--plano" aria-hidden="true"></div>
       <div class="hero__grid" aria-hidden="true"></div>
       <div class="hero__lines" aria-hidden="true">
         <span class="hero__line hero__line--h"></span>
@@ -154,7 +145,6 @@
       <figure class="split__media reveal" data-reveal>
         <div class="media-stack">
           <img class="media-stack__render" src="images/estudio.jpg" alt="Interior del estudio CALLI con luz natural y materialidad" loading="lazy" decoding="async">
-          <img class="media-stack__plano" src="images/plano/blueprint_interior_oficina_169_v2" alt="Plano arquitectónico del estudio CALLI" loading="lazy" decoding="async">
         </div>
         <figcaption>
           <span class="split__media-tag">Estudio · 2026</span>
@@ -166,7 +156,6 @@
     <!-- FILOSOFÍA -->
     <section class="philosophy" aria-labelledby="philosophy-title">
       <div class="philosophy__image philosophy__image--render" aria-hidden="true"></div>
-      <div class="philosophy__image philosophy__image--plano" aria-hidden="true"></div>
       <div class="philosophy__inner">
         <div class="philosophy__line" aria-hidden="true"></div>
         <p class="eyebrow reveal" data-reveal>Filosofía</p>
@@ -513,7 +502,6 @@
           <a class="project__link" href="#proyectos" aria-label="Ver proyecto Casa Aztahuacán">
             <div class="project__media">
               <img class="media-stack__render" src="images/project-01.jpg" alt="Casa Aztahuacán — fachada residencial" loading="lazy" decoding="async">
-              <img class="media-stack__plano" src="images/plano/blueprint_casa_moderna.jpg" alt="Plano arquitectónico Casa Aztahuacán" loading="lazy" decoding="async">
               <div class="project__overlay">
                 <span class="project__overlay-eyebrow">Proyecto · 2026</span>
                 <span class="project__overlay-cta">Ver proyecto →</span>
@@ -530,8 +518,7 @@
         <article class="project">
           <a class="project__link" href="#proyectos" aria-label="Ver proyecto 02">
             <div class="project__media">
-              <img class="media-stack__render" src="images/project-02.jpg" alt="Proyecto cultural — espacio interior" loading="lazy" decoding="async">
-              <img class="media-stack__plano" src="images/plano/blueprint_edificio.jpg" alt="Plano de elevación proyecto cultural" loading="lazy" decoding="async">
+              <img class="media-stack__render" src="images/render_riverside_apartments_v2.jpg" alt="Proyecto cultural — espacio interior" loading="lazy" decoding="async">
               <div class="project__overlay">
                 <span class="project__overlay-eyebrow">Proyecto · 2026</span>
                 <span class="project__overlay-cta">Ver proyecto →</span>
@@ -549,7 +536,6 @@
           <a class="project__link" href="#proyectos" aria-label="Ver proyecto 03">
             <div class="project__media">
               <img class="media-stack__render" src="images/project-03.jpg" alt="Proyecto urbano — edificio" loading="lazy" decoding="async">
-              <img class="media-stack__plano" src="images/plano/blueprint_casa_campo.jpg" alt="Plano urbano de desarrollo mixto" loading="lazy" decoding="async">
               <div class="project__overlay">
                 <span class="project__overlay-eyebrow">Proyecto · 2026</span>
                 <span class="project__overlay-cta">Ver proyecto →</span>
@@ -572,7 +558,6 @@
     <!-- CONTACTO -->
     <section id="contacto" class="contact" aria-labelledby="contact-title">
       <div class="contact__image contact__image--render" aria-hidden="true"></div>
-      <div class="contact__image contact__image--plano" aria-hidden="true"></div>
       <div class="contact__inner">
         <div class="contact__head">
           <p class="eyebrow reveal" data-reveal>06 — Contacto</p>
@@ -618,39 +603,6 @@
       <a href="#inicio" class="footer__top">Volver arriba ↑</a>
     </div>
   </footer>
-
-  <!-- Plano title block (visible in plano mode) -->
-  <aside class="title-block" aria-hidden="true">
-    <div class="title-block__row title-block__row--head">
-      <span class="title-block__brand">CALLI · ESTUDIO</span>
-      <span class="title-block__sheet">A-01</span>
-    </div>
-    <div class="title-block__row">
-      <span class="title-block__label">PROYECTO</span>
-      <span class="title-block__value">LANDING · WEB</span>
-    </div>
-    <div class="title-block__row">
-      <span class="title-block__label">DRAWING Nº</span>
-      <span class="title-block__value">2026.001</span>
-    </div>
-    <div class="title-block__row">
-      <span class="title-block__label">ESCALA</span>
-      <span class="title-block__value">1 : 1</span>
-    </div>
-    <div class="title-block__row">
-      <span class="title-block__label">FECHA</span>
-      <span class="title-block__value">IX · MMXXVI</span>
-    </div>
-    <div class="title-block__row title-block__row--stamp">
-      <span>DRAFT · FOR REVIEW</span>
-    </div>
-  </aside>
-
-  <!-- Plano mode watermark (visible in plano mode) -->
-  <div class="plano-watermark" aria-hidden="true">
-    <span>MODO</span>
-    <span>PLANO</span>
-  </div>
 
   <script src="script.js" defer></script>
 </body>

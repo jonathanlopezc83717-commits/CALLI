@@ -41,7 +41,7 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html{ scroll-behavior: smooth; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
 body{
   margin: 0;
   background: var(--ivory);
@@ -102,7 +102,7 @@ h1, h2, h3, p{ margin: 0; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 30;
   height: var(--nav-h);
   display: grid;
-  grid-template-columns: auto 1fr auto auto auto;
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
   gap: 2rem;
   padding: 0 var(--pad-x);
@@ -159,45 +159,6 @@ h1, h2, h3, p{ margin: 0; }
   color: var(--stone);
 }
 
-/* Mode toggle (Editorial / Blueprint) */
-.mode-toggle{
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  height: 30px;
-  padding: 2px;
-  background: transparent;
-  border: 1px solid var(--line);
-  font-family: var(--f-mono);
-  font-size: .58rem; letter-spacing: .16em; text-transform: uppercase;
-  cursor: pointer;
-  color: var(--stone);
-  transition: border-color .3s var(--ease), color .3s var(--ease);
-}
-.mode-toggle:hover{ border-color: var(--graphite); }
-.mode-toggle__options{
-  position: relative; z-index: 2;
-  display: grid; grid-template-columns: 1fr 1fr;
-  width: 130px;
-}
-.mode-toggle__option{
-  padding: 4px 10px;
-  text-align: center;
-  transition: color .35s var(--ease);
-  white-space: nowrap;
-}
-.mode-toggle__option.is-active{ color: var(--ivory); }
-.mode-toggle__thumb{
-  position: absolute;
-  top: 2px; bottom: 2px; left: 2px;
-  width: calc(50% - 2px);
-  background: var(--graphite);
-  z-index: 1;
-  transition: transform .42s var(--ease-out), background-color .35s var(--ease);
-  pointer-events: none;
-}
-body.is-plano .mode-toggle__option.is-active{ color: var(--graphite); }
-body.is-plano .mode-toggle__thumb{ transform: translateX(100%); background: var(--sand); }
 .menu{
   display: none;
   width: 44px; height: 44px;
@@ -263,6 +224,7 @@ body.is-plano .mode-toggle__thumb{ transform: translateX(100%); background: var(
 /* ---------- Hero ---------- */
 .hero{
   position: relative; min-height: 100vh;
+  min-height: 100svh;
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 0 var(--pad-x) clamp(7vh, 9vh, 11vh);
   overflow: hidden;
@@ -285,15 +247,6 @@ body.is-plano .mode-toggle__thumb{ transform: translateX(100%); background: var(
   background-image: url('images/hero.jpg');
   opacity: 1;
 }
-.hero__image--plano{
-  background-image: url('images/plano/blueprint_museo.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  filter: saturate(.95) brightness(.55) contrast(1.08);
-}
-body.is-plano .hero__image--render{ opacity: 0; }
-body.is-plano .hero__image--plano{ opacity: 1; filter: saturate(1) brightness(.65) contrast(1.1); }
 @keyframes kenburns{
   0%   { transform: scale(1)    translate3d(0, 0, 0); }
   100% { transform: scale(1.10) translate3d(-1.5%, -1.5%, 0); }
@@ -517,8 +470,7 @@ h2 em{ font-style: italic; color: var(--olive); font-weight: 300; }
   aspect-ratio: 4 / 5;
   overflow: hidden;
 }
-.split__media .media-stack__render,
-.split__media .media-stack__plano{
+.split__media .media-stack__render{
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
@@ -568,15 +520,6 @@ h2 em{ font-style: italic; color: var(--olive); font-weight: 300; }
   background-image: url('images/philosophy.jpg');
   opacity: .55;
 }
-.philosophy__image--plano{
-  background-image: url('images/plano/blueprint_axonometrica.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  filter: saturate(.6) brightness(.5) contrast(1.1);
-}
-body.is-plano .philosophy__image--render{ opacity: 0; }
-body.is-plano .philosophy__image--plano{ opacity: .55; }
 .philosophy::before{
   content: ""; position: absolute; inset: 0; z-index: 1;
   background:
@@ -891,10 +834,6 @@ body.is-plano .philosophy__image--plano{ opacity: .55; }
   transition: transform var(--t-slow) var(--ease-out), filter var(--t-slow) var(--ease), opacity .5s var(--ease);
   will-change: transform, opacity;
 }
-.media-stack__render{ opacity: 1; }
-.media-stack__plano{ opacity: 0; }
-body.is-plano .media-stack__render{ opacity: 0; }
-body.is-plano .media-stack__plano{ opacity: 1; filter: saturate(.95) brightness(1); }
 .project__media::after{
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, transparent 55%, rgba(31, 31, 29, 0.4) 100%);
@@ -934,10 +873,6 @@ body.is-plano .media-stack__plano{ opacity: 1; filter: saturate(.95) brightness(
 .project__link:hover .project__media .media-stack__render{
   transform: scale(1.05);
   filter: saturate(.95) brightness(1);
-}
-body.is-plano .project__link:hover .project__media .media-stack__plano{
-  transform: scale(1.05);
-  filter: saturate(1) brightness(1.05);
 }
 .project__link:hover .project__media::after{ opacity: .85; }
 .project__link:hover .project__overlay{ opacity: 1; }
@@ -982,15 +917,6 @@ body.is-plano .project__link:hover .project__media .media-stack__plano{
   background-image: url('images/contact.jpg');
   opacity: .55;
 }
-.contact__image--plano{
-  background-image: url('images/plano/blueprint_interior_cocina.png');
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  filter: saturate(.55) brightness(.35) contrast(1.15);
-}
-body.is-plano .contact__image--render{ opacity: 0; }
-body.is-plano .contact__image--plano{ opacity: .55; }
 .contact::before{
   content: ""; position: absolute; inset: 0; z-index: 1;
   background:
@@ -1081,236 +1007,6 @@ body.is-plano .contact__image--plano{ opacity: .55; }
 .footer__top:hover{ border-color: var(--sand); }
 
 /* ---------- Responsive ---------- */
-/* ============================================================
-   BLUEPRINT MODE
-   Active when <body> has the class .is-plano
-   Re-skins the page as a cyanotype architectural drawing.
-   ============================================================ */
-body.is-plano{
-  --ivory:       #0a2540;
-  --ivory-2:     #0d3b66;
-  --graphite:    #e8f4ff;
-  --graphite-2:  #0d3b66;
-  --sand:        #7dd3fc;
-  --sand-2:      #a8d8ff;
-  --olive:       #38bdf8;
-  --olive-2:     #0ea5e9;
-  --stone:       #93c5fd;
-  --stone-2:     #60a5fa;
-  --white:       #f0f9ff;
-  --line:        rgba(168, 216, 255, 0.20);
-  --line-soft:   rgba(168, 216, 255, 0.10);
-  --line-ivory:  rgba(168, 216, 255, 0.20);
-  background: #0a2540;
-  color: var(--graphite);
-  transition: background-color .5s var(--ease), color .5s var(--ease);
-}
-
-/* Body-level blueprint grid (very subtle) */
-body.is-plano::before{
-  content: "";
-  position: fixed; inset: 0; z-index: -1;
-  background-image:
-    linear-gradient(to right, rgba(125, 211, 252, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(125, 211, 252, 0.07) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-  animation: gridFade .8s var(--ease) both;
-}
-body.is-plano::after{
-  content: "";
-  position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(125, 211, 252, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(125, 211, 252, 0.04) 1px, transparent 1px);
-  background-size: 12px 12px;
-}
-@keyframes gridFade{ from{ opacity: 0; } to{ opacity: 1; } }
-
-/* Smooth section transitions */
-body.is-plano .section,
-body.is-plano .purpose-card,
-body.is-plano .value,
-body.is-plano .process-grid li,
-body.is-plano .service-list li,
-body.is-plano .project,
-body.is-plano .footer{
-  transition: background-color .5s var(--ease), border-color .5s var(--ease), color .5s var(--ease);
-}
-
-/* Hero: real blueprint image (no filter needed) */
-body.is-plano .hero::before{
-  background:
-    radial-gradient(ellipse 70% 70% at 0% 100%, rgba(10, 37, 64, 0.85) 0%, rgba(10, 37, 64, 0.4) 55%, transparent 80%),
-    radial-gradient(ellipse 60% 60% at 100% 0%, rgba(10, 37, 64, 0.6) 0%, transparent 70%),
-    linear-gradient(180deg, rgba(10, 37, 64, 0.35) 0%, transparent 30%, transparent 60%, rgba(10, 37, 64, 0.55) 100%);
-  transition: background .6s var(--ease);
-}
-body.is-plano .hero__grid{
-  background-image:
-    linear-gradient(to right, rgba(168, 216, 255, 0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(168, 216, 255, 0.12) 1px, transparent 1px);
-}
-body.is-plano .hero__line{ background: rgba(168, 216, 255, 0.18); }
-body.is-plano .hero__line--h::before,
-body.is-plano .hero__line--h::after,
-body.is-plano .hero__line--v::before,
-body.is-plano .hero__line--v::after{ background: rgba(168, 216, 255, 0.32); }
-body.is-plano .hero__line--v{ background: rgba(168, 216, 255, 0.10); }
-
-/* Section labels get brackets in blueprint mode */
-body.is-plano .section-number{
-  color: var(--sand);
-  letter-spacing: .22em;
-}
-body.is-plano .section-number__line{ background: var(--sand); }
-
-/* All images now use real blueprint images for plano mode (no duotone filter) */
-body.is-plano .split__media .media-stack__plano{
-  filter: saturate(.95) brightness(1);
-  transition: filter .5s var(--ease), transform .8s var(--ease-out), opacity .5s var(--ease);
-}
-body.is-plano .philosophy__image--plano{
-  mix-blend-mode: luminosity;
-  filter: saturate(.95) brightness(.95) contrast(1.05);
-}
-body.is-plano .contact__image--plano{
-  mix-blend-mode: luminosity;
-  filter: saturate(.95) brightness(.95) contrast(1.05);
-}
-
-/* Services / process grid dividers get more visible in blueprint mode */
-body.is-plano .service-list li{ cursor: default; }
-body.is-plano .service-list li::before{ background: var(--sand); }
-
-/* Footer in blueprint */
-body.is-plano .footer{ background: #061a30; border-top-color: var(--line-ivory); }
-body.is-plano .nav{ background: rgba(10, 37, 64, 0.85); border-bottom-color: var(--line-ivory); }
-body.is-plano .nav.is-scrolled{ background: rgba(10, 37, 64, 0.92); }
-
-/* The mobile menu needs blueprint colors too */
-body.is-plano .mobile-menu{ background: var(--ivory); }
-body.is-plano .mobile-menu__inner{ background: var(--ivory); border-left-color: var(--line); }
-
-/* Title block (architectural drawing label) */
-.title-block{
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 18;
-  width: 240px;
-  background: rgba(10, 37, 64, 0.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(125, 211, 252, 0.4);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
-  font-family: var(--f-mono);
-  color: var(--white);
-  opacity: 0;
-  transform: translateY(12px);
-  pointer-events: none;
-  transition: opacity .4s var(--ease) .15s, transform .5s var(--ease-out) .15s;
-}
-body.is-plano .title-block{
-  opacity: 1;
-  transform: translateY(0);
-}
-.title-block__row{
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 5px 12px;
-  border-bottom: 1px solid rgba(125, 211, 252, 0.18);
-  font-size: .58rem; letter-spacing: .12em; text-transform: uppercase;
-}
-.title-block__row:last-child{ border-bottom: 0; }
-.title-block__row--head{
-  background: rgba(125, 211, 252, 0.12);
-  font-size: .62rem; letter-spacing: .18em;
-  color: var(--white);
-}
-.title-block__row--stamp{
-  justify-content: center;
-  font-size: .52rem; letter-spacing: .22em;
-  color: var(--sand);
-  background: rgba(125, 211, 252, 0.06);
-  border-top: 1px solid rgba(125, 211, 252, 0.25);
-  border-bottom: 0;
-}
-.title-block__brand{ font-weight: 500; }
-.title-block__sheet{ color: var(--sand); }
-.title-block__label{ color: rgba(168, 216, 255, 0.6); }
-.title-block__value{ color: var(--white); font-weight: 500; }
-
-/* Plano watermark (top-left corner) */
-.plano-watermark{
-  position: fixed;
-  top: calc(var(--nav-h) + 1rem);
-  left: 1.5rem;
-  z-index: 15;
-  display: flex; flex-direction: column;
-  font-family: var(--f-mono);
-  font-size: .58rem;
-  letter-spacing: .35em;
-  text-transform: uppercase;
-  color: var(--sand);
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity .5s var(--ease) .25s, transform .5s var(--ease-out) .25s;
-}
-.plano-watermark span:first-child{
-  font-size: .65rem;
-  letter-spacing: .42em;
-  border-bottom: 1px solid var(--sand);
-  padding-bottom: 2px;
-  margin-bottom: 2px;
-}
-body.is-plano .plano-watermark{
-  opacity: .75;
-  transform: translateY(0);
-}
-
-/* Section crosshair markers in blueprint mode */
-body.is-plano .section::before,
-body.is-plano .purpose::before,
-body.is-plano .contact::before{
-  /* we keep existing overlay; just add visual harmony via var swap */
-}
-body.is-plano .purpose-card.vision{ background: rgba(125, 211, 252, 0.10); color: var(--graphite); }
-body.is-plano .purpose-card{ background: rgba(10, 37, 64, 0.4); }
-body.is-plano .purpose-card.mission{ background: rgba(13, 59, 102, 0.5); }
-body.is-plano .purpose > .section-heading,
-body.is-plano .purpose > .values{ background: transparent; }
-body.is-plano .purpose{ background: var(--line); }
-body.is-plano .process{ background: rgba(13, 59, 102, 0.5); }
-body.is-plano .services{ background: rgba(10, 37, 64, 0.4); }
-body.is-plano .projects{ background: rgba(10, 37, 64, 0.4); }
-body.is-plano .split{ /* keep clean */ }
-body.is-plano .section{ border-bottom-color: var(--line); }
-
-/* The values grid in blueprint mode */
-body.is-plano .value:hover{ background: rgba(125, 211, 252, 0.06); }
-body.is-plano .process-grid li:hover{ background: rgba(125, 211, 252, 0.06); }
-
-/* Contact section adjustments */
-body.is-plano .contact__link{ color: var(--sand); }
-body.is-plano .contact-link:hover{ color: var(--white); }
-body.is-plano .contact-copy{ border-color: var(--sand); color: var(--graphite); }
-body.is-plano .contact-copy:hover{ border-color: var(--white); color: var(--white); }
-body.is-plano .contact-details a:hover{ border-color: var(--sand); }
-body.is-plano .contact__details dd,
-body.is-plano .contact__details a{ color: var(--graphite); }
-body.is-plano .contact__details a:hover{ color: var(--sand); }
-
-/* Nav links active state in blueprint mode */
-body.is-plano .nav__num{ color: rgba(168, 216, 255, 0.5); }
-body.is-plano .nav__links a:hover .nav__num,
-body.is-plano .nav__links a.is-active .nav__num{ color: var(--sand); }
-
-/* Reduced motion: don't animate the grid */
-@media (prefers-reduced-motion: reduce){
-  body.is-plano::before{ animation: none; }
-}
-
 @media (max-width: 980px){
   .nav__meta{ display: none; }
   .nav{
@@ -1321,10 +1017,9 @@ body.is-plano .nav__links a.is-active .nav__num{ color: var(--sand); }
   .nav__links{ display: none; }
   .menu{ display: inline-flex; }
   .brand{ margin-right: auto; }
-  .mode-toggle{ justify-self: auto; }
   .values{ grid-template-columns: repeat(2, 1fr); }
   .value:nth-child(2n){ border-right: 0; }
-  .value:nth-child(-n+3){ border-bottom: 1px solid var(--line); }
+  .value:nth-child(-n+4){ border-bottom: 1px solid var(--line); }
   .process-grid{ grid-template-columns: repeat(3, 1fr); }
   .process-grid li{ border-bottom: 1px solid var(--line); }
   .process-grid li:nth-child(3n){ border-right: 0; }
@@ -1339,13 +1034,6 @@ body.is-plano .nav__links a.is-active .nav__num{ color: var(--sand); }
   .contact__details{ grid-template-columns: 1fr; gap: 1.4rem; }
   .footer{ grid-template-columns: 1fr; gap: 1.2rem; }
   .footer__col--end{ align-items: flex-start; }
-  .title-block{ width: 210px; right: 1rem; bottom: 1rem; }
-  .plano-watermark{ left: 1rem; font-size: .5rem; }
-  .mode-toggle__options{ width: 110px; }
-  .mode-toggle__option{ padding: 4px 8px; }
-}
-
-@media (max-width: 980px){
   .split{ grid-template-columns: 1.1fr 1fr; }
   .split__media{ grid-column: 1 / -1; max-width: 540px; margin-top: 1rem; }
   .split__media img{ aspect-ratio: 16 / 10; }
@@ -1353,6 +1041,7 @@ body.is-plano .nav__links a.is-active .nav__num{ color: var(--sand); }
 
 @media (max-width: 720px){
   :root{ --pad-x: var(--pad-x-sm); --nav-h: 68px; }
+  h2 br{ display: none; }
   .hero{ padding-bottom: 8vh; }
   .hero__title{ font-size: 26vw; }
   .hero__meta{
@@ -1374,12 +1063,14 @@ body.is-plano .nav__links a.is-active .nav__num{ color: var(--sand); }
   .process-grid li{ border-bottom: 1px solid var(--line); }
   .process-grid li:nth-child(2n){ border-right: 0; }
   .process-grid li:nth-child(n+5){ border-bottom: 0; }
+  .process-grid li:last-child{ border-right: 0; }
   .values{ grid-template-columns: 1fr; }
   .value{ border-right: 0; border-bottom: 1px solid var(--line); min-height: auto; padding: 1.8rem 0; }
   .value:last-child{ border-bottom: 0; }
   .value h3{ padding-top: 1rem; }
   .hero__cta{ flex-direction: column; align-items: stretch; }
   .button{ justify-content: space-between; }
+  .contact h2{ font-size: clamp(2.2rem, 10vw, 3.5rem); }
   .contact__cta{ flex-direction: column; align-items: flex-start; }
   .mobile-menu__inner{ border-left: 0; width: 100%; }
 }

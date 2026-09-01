@@ -239,45 +239,4 @@
     }
   }
 
-  /* ----------------------------------------------------------
-     9. Mode toggle (Render ↔ Plano)
-     ---------------------------------------------------------- */
-  const modeToggle = $('#modeToggle');
-  const modeOptions = $$('.mode-toggle__option');
-  const STORAGE_KEY  = 'calli-render-mode';
-
-  function setMode(mode){
-    const isPlano = mode === 'plano';
-    document.body.classList.toggle('is-plano', isPlano);
-    modeToggle?.setAttribute('aria-pressed', String(isPlano));
-    modeToggle?.setAttribute('aria-label', isPlano ? 'Cambiar a modo render' : 'Cambiar a modo plano');
-    modeOptions.forEach(o => o.classList.toggle('is-active', o.dataset.mode === mode));
-    try { localStorage.setItem(STORAGE_KEY, mode); } catch(_) {}
-  }
-
-  modeToggle?.addEventListener('click', () => {
-    const current = document.body.classList.contains('is-plano') ? 'plano' : 'render';
-    setMode(current === 'plano' ? 'render' : 'plano');
-  });
-
-  // Allow clicking on the option labels directly too
-  modeOptions.forEach(o => {
-    o.addEventListener('click', (e) => {
-      e.stopPropagation();
-      setMode(o.dataset.mode);
-    });
-  });
-
-  // Initialize from storage (with migration from old keys)
-  try {
-    let saved = localStorage.getItem(STORAGE_KEY);
-    // Migrate old "calli-mode" values
-    if (!saved){
-      const old = localStorage.getItem('calli-mode');
-      if (old === 'blueprint') saved = 'plano';
-      else if (old === 'editorial') saved = 'render';
-    }
-    if (saved === 'plano' || saved === 'render') setMode(saved);
-  } catch(_) {}
-
 })();
