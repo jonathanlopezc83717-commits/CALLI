@@ -286,7 +286,7 @@ body.is-plano .mode-toggle__thumb{ transform: translateX(100%); background: var(
   opacity: 1;
 }
 .hero__image--plano{
-  background-image: url('images/plano/hero-plano.svg');
+  background-image: url('images/plano/blueprint_banner.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0;
@@ -569,7 +569,7 @@ h2 em{ font-style: italic; color: var(--olive); font-weight: 300; }
   opacity: .55;
 }
 .philosophy__image--plano{
-  background-image: url('images/plano/philosophy-plano.svg');
+  background-image: url('images/plano/blueprint_axonometrica.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0;
@@ -983,7 +983,7 @@ body.is-plano .project__link:hover .project__media .media-stack__plano{
   opacity: .55;
 }
 .contact__image--plano{
-  background-image: url('images/plano/contact-plano.svg');
+  background-image: url('images/plano/blueprint_interior_cocina.png');
   background-size: cover;
   background-position: center;
   opacity: 0;
